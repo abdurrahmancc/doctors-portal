@@ -1,0 +1,47 @@
+.people {
+    background: url(http://fs2.directupload.net/images/150304/f48hrkmk.png) no-repeat;
+    background-size: 200px 300px;
+    height: 300px;
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 7;
+    transition: all 6s;
+  }
+  .wrap:hover .people {
+    left: 100%;
+  }
+  .wrap {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    background: lightblue;
+    overflow: hidden;
+  }
+  .wrap:before {
+    height: 50%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: -20%;
+    z-index: 6;
+    left: 0;
+    -webkit-transform: skewY(-6deg);
+    -moz-transform: skewY(-6deg);
+    transform: skewY(-6deg);
+    background: white;
+  }
+  .wrap:after {
+    height: 50%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    z-index: 8;
+    left: 0;
+    -webkit-transform: skewY(-6deg);
+    -moz-transform: skewY(-6deg);
+    transform: skewY(-6deg);
+    background: white;
+  }
