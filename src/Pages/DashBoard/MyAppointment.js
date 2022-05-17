@@ -12,7 +12,7 @@ const MyAppointment = () => {
   const navigate = useNavigate();
 
   /*   useEffect(() => {
-    fetch(`http://localhost:5000/bookings?patient=${user.email}`, {
+    fetch(`https://whispering-dusk-64489.herokuapp.com/bookings?patient=${user.email}`, {
       method: "GET",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -36,7 +36,7 @@ const MyAppointment = () => {
     refetch,
     data: appointment,
   } = useQuery(["repoData", user], () =>
-    fetch(`http://localhost:5000/bookings?patient=${user.email}`, {
+    fetch(`https://whispering-dusk-64489.herokuapp.com/bookings?patient=${user.email}`, {
       method: "GET",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,

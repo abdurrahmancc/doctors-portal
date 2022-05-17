@@ -25,7 +25,7 @@ const BookingModal = ({ treatment, selected, setTreatment, refetch }) => {
       number: e.target.number.value,
     };
 
-    fetch("http://localhost:5000/booking", {
+    fetch("https://whispering-dusk-64489.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",

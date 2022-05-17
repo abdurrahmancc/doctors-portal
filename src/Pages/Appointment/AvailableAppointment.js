@@ -14,7 +14,9 @@ const AvailableAppointment = ({ selected }) => {
     isLoading,
     refetch,
   } = useQuery(["available", formatDate], () =>
-    fetch(`http://localhost:5000/available?date=${formatDate}`).then((res) => res.json())
+    fetch(`https://whispering-dusk-64489.herokuapp.com/available?date=${formatDate}`).then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
