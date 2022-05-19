@@ -2,33 +2,13 @@ import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../Hooks/Firebase";
 import Loading from "../Share/Loading/Loading";
 
 const MyAppointment = () => {
   const [user, loading] = useAuthState(auth);
-  // const [appointment, setAppointment] = useState([]);
   const navigate = useNavigate();
-
-  /*   useEffect(() => {
-    fetch(`https://whispering-dusk-64489.herokuapp.com/bookings?patient=${user.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => {
-        console.log(res);
-        if (res.status === 403 || res.status === 401) {
-          localStorage.removeItem("accessToken");
-          signOut(auth);
-          navigate("/");
-        }
-        return res.json();
-      })
-      .then((data) => setAppointment(data));
-  }, [user]); */
 
   const {
     isLoading,
@@ -60,10 +40,6 @@ const MyAppointment = () => {
     return <Loading></Loading>;
   }
 
-  if (user) {
-    // refetch();
-  }
-
   return (
     <div>
       <h1 className="text-center">my Appointments {appointment?.length}</h1>
@@ -77,6 +53,8 @@ const MyAppointment = () => {
               <th>Date</th>
               <th>Time</th>
               <th>Treatment</th>
+              <th>Payment</th>
+              <th className="text-center">Transaction Id</th>
             </tr>
           </thead>
           <tbody>
@@ -88,6 +66,17 @@ const MyAppointment = () => {
                   <td>{a.date}</td>
                   <td>{a.Slot}</td>
                   <td>{a.treatment}</td>
+                  <td>
+                    {a.price && !a.paid && (
+                      <Link to={`/dashboard/payment/${a._id}`}>
+                        <button className="btn btn-xs btn-success">pay</button>
+                      </Link>
+                    )}
+                    {a.price && a.paid && <span className="text-success font-bold">paid</span>}
+                  </td>
+                  <td>
+                    <span className="text-orange-500"> {a.transactionId}</span>
+                  </td>
                 </tr>
               ))}
           </tbody>

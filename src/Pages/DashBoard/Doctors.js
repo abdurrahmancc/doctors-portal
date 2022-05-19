@@ -14,7 +14,7 @@ const Doctors = () => {
     isLoading,
     refetch,
   } = useQuery("doctors", () =>
-    axios.get("http://localhost:5000/doctors", {
+    axios.get("https://whispering-dusk-64489.herokuapp.com/doctors", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

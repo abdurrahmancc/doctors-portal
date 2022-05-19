@@ -15,7 +15,7 @@ const AddDoctors = () => {
   } = useForm();
 
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("http://localhost:5000/docservices").then((res) => res.json())
+    fetch("https://whispering-dusk-64489.herokuapp.com/docservices").then((res) => res.json())
   );
 
   if (isLoading) {
@@ -37,11 +37,15 @@ const AddDoctors = () => {
         specialty: data.specialty,
         image: result.data.data.display_url,
       };
-      const doctorResult = await axios.post("http://localhost:5000/doctors", doctor, {
-        headers: {
-          authorization: `bearer ${localStorage.getItem("accessToken")}`,
-        },
-      });
+      const doctorResult = await axios.post(
+        "https://whispering-dusk-64489.herokuapp.com/doctors",
+        doctor,
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
       if (doctorResult.status === 200) {
         toast.success("doctor added successfully");
         reset();

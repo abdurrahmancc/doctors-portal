@@ -2,7 +2,7 @@ import React from "react";
 import PrimaryBtn from "../Share/PrimaryBtn/PrimaryBtn";
 
 const Service = ({ service, setTreatment }) => {
-  const { name, slots } = service;
+  const { name, slots, price } = service;
   return (
     <div className="card lg:max-w-lg px-[80px] md:max-w-[400px] max-w-[435px]  mx-auto  bg-base-100 shadow-xl">
       <div className="card-body py-[42px]">
@@ -12,6 +12,9 @@ const Service = ({ service, setTreatment }) => {
         </p>
         <p className="text-center">
           {slots.length} {slots.length > 1 ? "SPACES" : "SPACE"} AVAILABLE
+        </p>
+        <p className="text-center">
+          <span>price: ${price}</span>
         </p>
         <div className="card-actions justify-center ">
           <label

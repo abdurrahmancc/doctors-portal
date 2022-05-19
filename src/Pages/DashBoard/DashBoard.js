@@ -11,7 +11,7 @@ const DashBoard = () => {
   console.log(admin);
   return (
     <>
-      <div class="drawer drawer-mobile">
+      <div class="drawer drawer-mobile lg:mx-[100px]">
         <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col items-center ">
           <h1 className="text-3xl text-orange-500">DashBoard</h1>

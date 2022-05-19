@@ -5,11 +5,14 @@ import toast from "react-hot-toast";
 const DeleteConfirmModal = ({ deleteConfirmModal, refetch, setDeleteConfirmModal }) => {
   const { email, name, specialty, _id } = deleteConfirmModal;
   const handleDelete = async (id) => {
-    const { data } = await axios.delete(`http://localhost:5000/doctor/${id}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    });
+    const { data } = await axios.delete(
+      `https://whispering-dusk-64489.herokuapp.com/doctor/${id}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    );
 
     if (data.acknowledged) {
       toast.success(`Doctor ${name} is deleted`);
