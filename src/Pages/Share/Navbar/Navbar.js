@@ -64,7 +64,7 @@ const Navbar = () => {
               {navItems}
             </ul>
           </div>
-          <Link to={"/"} className="btn btn-ghost normal-case text-xl">
+          <Link to={"/"} className="btn hidden sm:block btn-ghost normal-case text-xl">
             DOCTORS PORTAL
           </Link>
         </div>

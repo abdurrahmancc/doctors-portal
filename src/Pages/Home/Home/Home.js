@@ -10,7 +10,7 @@ import Treatment from "../Treatment/Treatment";
 
 const Home = () => {
   return (
-    <div className="mx-auto max-w-[1398px]">
+    <div className="">
       <Banner></Banner>
       <Info></Info>
       <Services></Services>

@@ -14,7 +14,11 @@ const AppointmentBanner = ({ selected, setSelected }) => {
     <>
       <div className="hero min-h-screen bg-no-repeat bg-[url('/src/assets/images/bg.png')]">
         <div className="hero-content gap-32 flex-col lg:flex-row-reverse">
-          <img src={chare} className="max-w-[594px] max-h-[355px] rounded-lg shadow-2xl" alt="" />
+          <img
+            src={chare}
+            className="lg:max-w-[594px] lg:max-h-[355px] rounded-lg shadow-2xl"
+            alt=""
+          />
           <div>
             <DayPicker mode="single" selected={selected} onSelect={setSelected} />
             {/* <DatePicker

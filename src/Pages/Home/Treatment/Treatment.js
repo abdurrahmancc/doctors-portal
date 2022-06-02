@@ -4,7 +4,7 @@ import PrimaryBtn from "../../Share/PrimaryBtn/PrimaryBtn";
 
 const Treatment = () => {
   return (
-    <>
+    <div className="container mx-auto">
       <div className="hero min-h-screen ">
         <div className="hero-content gap-24 flex-col lg:flex-row">
           <img src={img} className="max-w-sm rounded-lg shadow-2xl" />
@@ -23,7 +23,7 @@ const Treatment = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

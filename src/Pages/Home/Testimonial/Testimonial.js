@@ -33,7 +33,7 @@ const Testimonial = () => {
     },
   ];
   return (
-    <section className="mt-20">
+    <section className="mt-20 container mx-auto">
       <div className="flex justify-between mb-20 items-center">
         <div>
           <h3 className="capitalize text-primary font-bold text-xl leading-6">testimonial</h3>
