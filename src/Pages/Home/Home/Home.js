@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollTopBtn from "../../Share/ScrollTopBtn";
 import Banner from "../Banner/Banner";
 import ContactUs from "../ContactUs/ContactUs";
 import Footer from "../Footer/Footer";
@@ -18,6 +19,7 @@ const Home = () => {
       <MakeAppointment></MakeAppointment>
       <Testimonial></Testimonial>
       <ContactUs></ContactUs>
+      <ScrollTopBtn />
       <Footer></Footer>
     </div>
   );
